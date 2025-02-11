@@ -20,7 +20,7 @@ codesg segment
            mov cx, 11
         s0:mov al, [bx+5]
            or al, 00100000b
-           mov [bx],al
+           mov [bx+5],al
            inc bx
            loop s0
 
