@@ -20,19 +20,21 @@ codesg segment
         mov bx,0
 
         mov cx,4
-    s0: push cx ; 将外层循环的cx 压栈
+
+     s0:push cx ; 将外层循环的cx 压栈
         mov si,0 
         mov cx,3 ; cx 设置为内层循环的次数
+
       s:mov al,[bx+si]
         and al,11011111b
         mov [bx+si],al
         inc si
         loop s
-        
+
         add bx,16
         pop cx ; cx 从栈中弹出
         loop s0
-   
+
         mov ax,4c00h
         int 21h
 codesg ends
